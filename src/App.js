@@ -1,19 +1,21 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import AppContextProvider from './contexts/app/AppContext'
+import HomePage from './pages/Home'
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <div>
+    <div className="App">
+      <AppContextProvider>
+        <Router>
           <Switch>
             <Route exact path="/">
-              Home
+              <HomePage />
             </Route>
             <Route path="*">404</Route>
           </Switch>
-        </div>
-      </div>
-    </Router>
+        </Router>
+      </AppContextProvider>
+    </div>
   )
 }
 
